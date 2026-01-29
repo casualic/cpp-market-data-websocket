@@ -1,0 +1,75 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "make",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++: Compile Current File",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-std=c++17",
+                "-g",
+                "-I/opt/homebrew/opt/boost/include",
+                "-I/opt/homebrew/opt/openssl@3/include",
+                "-L/opt/homebrew/Cellar/boost/1.90.0/lib",
+                "-L/opt/homebrew/opt/openssl@3/lib",
+                "-lboost_thread",
+                "-lssl",
+                "-lcrypto"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "C++: Compile and Run",
+            "type": "shell",
+            "command": "g++ ${file} -o ${fileDirname}/${fileBasenameNoExtension} -std=c++17 -I/opt/homebrew/opt/boost/include -I/opt/homebrew/opt/openssl@3/include -L/opt/homebrew/Cellar/boost/1.90.0/lib -L/opt/homebrew/opt/openssl@3/lib -lboost_thread -lssl -lcrypto && /bin/sh -c 'set -a; [ -f \"${fileDirname}/.env\" ] && . \"${fileDirname}/.env\"; set +a; \"${fileDirname}/${fileBasenameNoExtension}\"'",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true
+            }
+        }
+    ]
+}

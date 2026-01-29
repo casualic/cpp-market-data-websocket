@@ -17,7 +17,7 @@ int main () {
         client.close();
     };
 
-    const int test_seconds = 5;
+    const int test_seconds = 10;
 
     {
         std::string url{"wss://stream.data.alpaca.markets/v1beta3/crypto/eu-1"};

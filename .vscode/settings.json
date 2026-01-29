@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "*.cxx": "cpp",
+        "*.cc": "cpp",
+        "*.hpp": "cpp",
+        "*.h": "cpp"
+    },
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.inlineValues": true
+}
